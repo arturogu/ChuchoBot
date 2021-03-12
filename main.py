@@ -50,6 +50,10 @@ async def on_message(message):
 
     if message.content.startswith('$bob'):
       await message.channel.send(random.choice(bob))
+
+    if message.content.startswith(('huele a', 'Huele a')):
+      huele = message.content[8:]
+      await message.channel.send("¿Qué es "+ huele + "?")
   
     if any(word in message.content for word in sleepWords):
       await message.add_reaction(sleepEmoji[0]) 
@@ -59,6 +63,9 @@ async def on_message(message):
     if any(word in message.content for word in pogg):
       await message.add_reaction("<:poggers:726940974114144256>")
 
+@client.event
+async def on_message_delete(message):
+  await message.channel.send("No lo borre compa")
 
 keep_alive()
 client.run(os.getenv('TOKEN'))
