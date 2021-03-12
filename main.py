@@ -26,7 +26,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.author.name == 'AEROROCK182#5155':
+    if message.author.name == 'AEROROCK182':
       await message.add_reaction("<:todomeco:780959558016434227>")
     
     if message.content.startswith('$maigos'):
