@@ -17,6 +17,8 @@ pogg = ["pog", "poggers", "pogchamp", "pogers"]
 
 bob = ["<:smartass:445119911367409664>", "<:cry_bob:445120997016993803>", "<:bobxdidi:445129104392585236>", "<:bob13:817638288688414740>", "<:bob_wut:445130461866360834>", "<:bob_smile:445125856134823936>", "<:bob_ninja:445130068939898880>", "<:bob_ew:445130092989906971>", "<:bob_cry2:445130083745792001>", "<:banana_bob:445125088518471683>"]
 
+jackbox = ["quiplash", "survive the internet", "split the room", "mad verse city", "fibbage", "champ'd up", "drawfull", "trivia murder party", "jokeboat", "talking points"]
+
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
@@ -46,10 +48,13 @@ async def on_message(message):
       await message.channel.send(random.choice(llaves))
 
     if message.content.startswith('$poggers'):
-      await message.channel.send("<:poggers:726940974114144256>")
+      await message.channel.send("<:poggers:726940974114144256><:pogchuy:839951744850067578>")
 
     if message.content.startswith('$bob'):
       await message.channel.send(random.choice(bob))
+
+    if message.content.startswith('$jackbox'):
+      await message.channel.send(random.choice(jackbox))
 
     if message.content.startswith(('huele a', 'Huele a')):
       huele = message.content[8:]
@@ -62,6 +67,7 @@ async def on_message(message):
 
     if any(word in message.content for word in pogg):
       await message.add_reaction("<:poggers:726940974114144256>")
+      await message.add_reaction("<:pogchuy:839951744850067578>")
 
 @client.event
 async def on_message_delete(message):
