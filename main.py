@@ -30,6 +30,13 @@ async def on_message(message):
 
     if message.author.name == 'AEROROCK182':
       await message.add_reaction("<:todomeco:780959558016434227>")
+
+    if message.author.name == 'Elisa_i':
+      await message.add_reaction("<:todomeco:780959558016434227>")
+
+    if message.author.name == 'Dieg0350':
+      await message.add_reaction("<:todomeco:780959558016434227>")
+      await message.add_reaction("<:didi_magic:445130062598111232>")
     
     if message.content.startswith('$maigos'):
       base = datetime.datetime(2020, 3, 15)
@@ -68,6 +75,10 @@ async def on_message(message):
     if any(word in message.content for word in pogg):
       await message.add_reaction("<:poggers:726940974114144256>")
       await message.add_reaction("<:pogchuy:839951744850067578>")
+
+    if "twitter.com/anysutherlin" in message.content:
+      await message.delete()
+      await message.channel.send("<:shutup:751981321626189904><:shutup:751981321626189904><:shutup:751981321626189904><:shutup:751981321626189904><:shutup:751981321626189904>")
 
 @client.event
 async def on_message_delete(message):
