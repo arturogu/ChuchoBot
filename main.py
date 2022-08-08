@@ -1,6 +1,5 @@
 import discord
 import os
-import datetime
 import random
 from keep_alive import keep_alive
 
@@ -13,7 +12,9 @@ sleepWords = ["zack snyder", "snyder cut", "justice league", "snyder"]
 
 llaves = ["https://media.discordapp.net/attachments/768385029784993862/813593987519873024/Maldita_sea_2.gif", "https://media.discordapp.net/attachments/768385029784993862/813593905298931732/MalditaSea.gif"]
 
-pogg = ["pog", "poggers", "pogchamp", "pogers"]
+pogg = ["pog", "Pog", "POG", "POg", "pOG", "PoG", "pOG", "poG"]
+
+musk = ["elon", "Elon", "Musk", "musk"]
 
 bob = ["<:smartass:445119911367409664>", "<:cry_bob:445120997016993803>", "<:bobxdidi:445129104392585236>", "<:bob13:817638288688414740>", "<:bob_wut:445130461866360834>", "<:bob_smile:445125856134823936>", "<:bob_ninja:445130068939898880>", "<:bob_ew:445130092989906971>", "<:bob_cry2:445130083745792001>", "<:banana_bob:445125088518471683>"]
 
@@ -37,13 +38,12 @@ async def on_message(message):
     if message.author.name == 'Dieg0350':
       await message.add_reaction("<:todomeco:780959558016434227>")
       await message.add_reaction("<:didi_magic:445130062598111232>")
+
+    # if message.author.name in ('Cotepich1', 'Isai.Navarro', 'ElMemo'):
+    #   await message.add_reaction("🖕")
     
-    if message.content.startswith('$maigos'):
-      base = datetime.datetime(2020, 3, 15)
-      x = datetime.datetime.now()
-      days = x - base
-      msg = "Han pasado " + str(days.days) + " dias sin ver a los maigos " + random.choice(cryEmoji)
-      await message.channel.send(msg)
+    if message.content.startswith(('cual', 'Cual', 'cuál', 'Cuál') ):
+      await message.channel.send('Esta')
 
     if message.content.startswith('$caca'):
       await message.channel.send(":poop:")
@@ -79,6 +79,9 @@ async def on_message(message):
     if "twitter.com/anysutherlin" in message.content:
       await message.delete()
       await message.channel.send("<:shutup:751981321626189904><:shutup:751981321626189904><:shutup:751981321626189904><:shutup:751981321626189904><:shutup:751981321626189904>")
+
+    if any(word in message.content for word in musk):
+      await message.delete()
 
 @client.event
 async def on_message_delete(message):
